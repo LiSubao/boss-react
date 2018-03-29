@@ -1,5 +1,7 @@
 import dva from 'dva';
 import RouterConfig from './router';
+import IndexPageM from './model/IndexPage/IndexPage_M'
+
 
 // 1. Initialize
 const app = dva();
@@ -8,7 +10,7 @@ const app = dva();
 // app.use({});
 
 // 3. Model
-app.model(require('./model/IndexPage/IndexPage_M'));
+app.model(IndexPageM);
 
 // 4. Router
 app.router(RouterConfig);

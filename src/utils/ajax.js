@@ -2,7 +2,7 @@ import fetch from 'dva/fetch';
 import { hashHistory } from 'dva/router';
 import { Modal, Button } from 'antd';
 const confirm = Modal.confirm;
-const weburl = 'https://'+DOMAIN_CONFIG+'/ihm';
+const weburl = 'http://127.0.0.1:8080';
 
 var ref = true;
 export default {
@@ -17,7 +17,7 @@ export default {
             return paramStr;
     },
     get: function(originUrl, data) {
-        let url = originUrl;
+        let url = weburl+originUrl;
         let queryString = this.convertObjToQueryString(data);
         if (url.indexOf('?') !== -1) url = url + '&' + queryString;
         else url += ('?' + queryString);

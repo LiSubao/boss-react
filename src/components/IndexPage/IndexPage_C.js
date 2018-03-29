@@ -1,18 +1,69 @@
-import React, {PropTypes} from 'react';
+import React from 'react';
+import logo from '../../assets/img/logo.png';
+import './IndexPage.scss';
+import {Card,Form,Input,Radio,Button} from 'antd';
+const FormItem=Form.Item;
 
 
-class IndexPage extends React.Component{
-    constructor(props){
+
+class IndexPage extends React.Component {
+    constructor(props) {
         super(props);
-        this.state={
-            name:"hello wumengchao"
+        this.state = {
+            name: "hello wumengchao"
         }
     }
-    render(){
-        return(
-            <div>
-                {this.state.name}
-                {this.props.indexPage.modelName}
+
+    componentDidMount() {
+        this.props.dispatch({
+            type: "indexPage/init"
+        })
+    }
+
+    render() {
+        const { getFieldDecorator } = this.props.form;
+        return (
+            <div className="mainContainer">
+                <header className="headerContainer">
+                    <div>
+                        <img src={logo} alt="logo" className="logo"/>
+                        <span className="back">返回官网</span>
+                    </div>
+                </header>
+                <div className="dash"></div>
+                <div>
+                    <Card className="loginContainer">
+                        <div className="title">SD-WAN综合管理平台</div>
+                        <Form>
+                            <FormItem className="FormItem">
+                                {getFieldDecorator('userNm', {
+                                    rules: [{message: '请输入用户名',}],})
+                                (
+                                    <Input size="large" placeholder="请输入用户名" className="input"/>
+                                )
+                                }
+                            </FormItem>
+                            <FormItem className="FormItem">
+                                {getFieldDecorator('password', {
+                                    rules: [{message: '请输入密码!',}],})
+                                (
+                                    <Input size="large" placeholder="请输入密码" className="input"/>
+                                )
+                                }
+                            </FormItem>
+                            <FormItem>
+                                {getFieldDecorator('savePassword', {
+                                    })
+                                (
+                                    <Radio>记住密码</Radio>
+                                )
+                                }
+                            </FormItem>
+                            <Button type="primary">Danger</Button>
+                        </Form>
+                    </Card>
+
+                </div>
             </div>
         )
     }
