@@ -2,7 +2,7 @@ import fetch from 'dva/fetch';
 import { hashHistory } from 'dva/router';
 import { Modal, Button } from 'antd';
 const confirm = Modal.confirm;
-const weburl = 'http://127.0.0.1:8080';
+const weburl = 'http://localhost:3000';
 
 var ref = true;
 export default {
