@@ -84,7 +84,12 @@ module.exports = function (proxy, allowedHost) {
             '/v2/': {
                 target: "http://192.168.34.41:9898",
                 changeOrigin: true,
+            },
+            '/v1/':{
+                target:"http://192.168.30.89:8002",
+                changeOrigin: true,
             }
+
         },
         before(app) {
             // This lets us open files from the runtime error overlay.

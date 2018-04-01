@@ -1,27 +1,45 @@
 import React from 'react';
 import logo from '../../assets/img/logo.png';
 import './IndexPage.scss';
-import {Card,Form,Input,Radio,Button} from 'antd';
-const FormItem=Form.Item;
+import {Card, Form, Input, Radio, Button} from 'antd';
 
+const FormItem = Form.Item;
 
 
 class IndexPage extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            name: "hello wumengchao"
-        }
+        this.state = {}
     }
 
     componentDidMount() {
         this.props.dispatch({
-            type: "indexPage/init"
+            type: "indexPage/init",
+            payload: {
+                username: "root",
+                password: "root",
+            }
         })
+        console.log(this.props);
     }
 
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.form.validateFields((err, values) => {
+            if (!err) {
+                this.props.dispatch({
+                    type: "indexPage/init",
+                    payload: {
+                        username: values.userNm,
+                        password: values.password,
+                    }
+                })
+            }
+        })
+    };
+
     render() {
-        const { getFieldDecorator } = this.props.form;
+        const {getFieldDecorator} = this.props.form;
         return (
             <div className="mainContainer">
                 <header className="headerContainer">
@@ -34,10 +52,11 @@ class IndexPage extends React.Component {
                 <div>
                     <Card className="loginContainer">
                         <div className="title">SD-WAN综合管理平台</div>
-                        <Form>
+                        <Form onSubmit={this.handleSubmit}>
                             <FormItem className="FormItem">
                                 {getFieldDecorator('userNm', {
-                                    rules: [{message: '请输入用户名',}],})
+                                    rules: [{required: true, message: '请输入用户名',}],
+                                })
                                 (
                                     <Input size="large" placeholder="请输入用户名" className="input"/>
                                 )
@@ -45,21 +64,21 @@ class IndexPage extends React.Component {
                             </FormItem>
                             <FormItem className="FormItem">
                                 {getFieldDecorator('password', {
-                                    rules: [{message: '请输入密码!',}],})
+                                    rules: [{required: true, message: '请输入密码!',}],
+                                })
                                 (
                                     <Input size="large" placeholder="请输入密码" className="input"/>
                                 )
                                 }
                             </FormItem>
                             <FormItem>
-                                {getFieldDecorator('savePassword', {
-                                    })
+                                {getFieldDecorator('savePassword', {})
                                 (
                                     <Radio>记住密码</Radio>
                                 )
                                 }
                             </FormItem>
-                            <Button type="primary">Danger</Button>
+                            <Button type="primary" htmlType="submit" className="confirmBtn">登录</Button>
                         </Form>
                     </Card>
 

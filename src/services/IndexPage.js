@@ -1,14 +1,13 @@
 import $ from '../utils/ajax';
 
-async function testService(params) {
-    var data={
-        item:"tunnel_rate",
-        tid:1,
-        start_tm:"1970-01-12%2015:23:42",
-        end_tm:"2018-12-13%2018:59:04"
+async function login(params) {
+    var formData=new FormData();
+    for(let key in params){
+        formData.append(key,params[key])
     }
-    return $.getJSON("/v2/step/statistics?item=users_content&companyid=76&start_tm=1970-01-12%2015:23:42&end_tm=2018-12-13%2018:59:04&top=5&sip=172.16.11.111")
+    console.log(formData);
+    return $.formPost("/v1/login/",formData)
 }
 
 
-export {testService}
+export {login}

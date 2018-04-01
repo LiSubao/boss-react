@@ -1,4 +1,4 @@
-import {testService} from '../../services/IndexPage'
+import {login} from '../../services/IndexPage'
 export default {
     namespace:"indexPage",
     state:{
@@ -6,7 +6,7 @@ export default {
     },
     effects:{
         *init({payload},{call}){
-            var test=yield call(testService,payload)
+            var test=yield call(login,payload)
             console.log(test);
         }
     },
