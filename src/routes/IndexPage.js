@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'dva';
+import { connect } from 'dva-react-router-3';
 import IndexPage from '../components/IndexPage/IndexPage_C';
 import {Form} from 'antd';
 

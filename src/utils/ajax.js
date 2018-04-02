@@ -1,5 +1,5 @@
-import fetch from 'dva/fetch';
-import { hashHistory } from 'dva/router';
+import fetch from 'dva-react-router-3/fetch';
+import { hashHistory } from 'dva-react-router-3/router';
 import { Modal, Button } from 'antd';
 const confirm = Modal.confirm;
 const weburl = 'http://localhost:3000';

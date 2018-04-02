@@ -100,11 +100,11 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy":{
+  "proxy": {
     "/v1/*": {
       "target": "http://192.168.30.89:8080",
       "changeOrigin": true,
-      "secure":false
+      "secure": false
     }
   }
 }

@@ -1,10 +1,7 @@
 import React from 'react';
 import {Card,Form,Input,Radio,Button} from 'antd';
 const FormItem=Form.Item;
-
-
-
-class CM0101_C extends React.Component {
+class Layout extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,9 +10,9 @@ class CM0101_C extends React.Component {
     }
     render(){
         return(
-            <div>CM0101ddddddddddddddd</div>
+            <div>tououoaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</div>
         )
     }
 }
 
-export default CM0101_C;
+export default Layout;

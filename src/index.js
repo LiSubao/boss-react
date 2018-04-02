@@ -1,4 +1,4 @@
-import dva from 'dva';
+import dva from 'dva-react-router-3';
 import RouterConfig from './router';
 import IndexPageM from './model/IndexPage/IndexPage_M'
 
