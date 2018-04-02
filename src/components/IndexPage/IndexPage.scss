@@ -1,12 +1,15 @@
 .mainContainer {
   .headerContainer {
+    margin-top:24px;
     .logo {
       text-align: left;
+      margin-left: 1%;
     }
     .back {
       float: right;
       vertical-align: center;
       line-height: 40px;
+      margin-right: 1%;
     }
   }
   .dash {
@@ -17,7 +20,7 @@
     position: fixed;
     top: 0px;
     left: 50%;
-    width: 350px;
+    width: 450px;
     height: auto;
     overflow: hidden;
     margin: 11% auto 0;
@@ -37,6 +40,9 @@
       text-align: center;
       font-family: HiraginoSansGB-W3;
       color: rgba(137,137,137,1);
+    }
+    .button{
+      width:100%
     }
   }
 

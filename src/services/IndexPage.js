@@ -7,7 +7,7 @@ async function testService(params) {
         start_tm:"1970-01-12%2015:23:42",
         end_tm:"2018-12-13%2018:59:04"
     }
-    /*return $.get("/v1/company/get_company_list/")*/
+    return $.get("/v1/company/get_company_list/",data)
 }
 
 

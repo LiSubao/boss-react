@@ -27,10 +27,10 @@ class IndexPage extends React.Component {
                 <header className="headerContainer">
                     <div>
                         <img src={logo} alt="logo" className="logo"/>
-                        <span className="back">返回官网</span>
+                        <a href="http://www.baidu.com"><span className="back">返回官网</span></a>
                     </div>
                 </header>
-                <div className="dash"></div>
+                <div className="dash"/>
                 <div>
                     <Card className="loginContainer">
                         <div className="title">SD-WAN综合管理平台</div>
@@ -43,7 +43,7 @@ class IndexPage extends React.Component {
                                 )
                                 }
                             </FormItem>
-                            <FormItem className="FormItem">
+                            <FormItem>
                                 {getFieldDecorator('password', {
                                     rules: [{message: '请输入密码!',}],})
                                 (
@@ -59,7 +59,7 @@ class IndexPage extends React.Component {
                                 )
                                 }
                             </FormItem>
-                            <Button type="primary">Danger</Button>
+                            <Button type="primary" className="button">登录</Button>
                         </Form>
                     </Card>
 
