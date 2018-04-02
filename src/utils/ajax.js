@@ -1,7 +1,6 @@
 import fetch from 'dva/fetch';
 import { hashHistory } from 'dva/router';
-import { Modal, Button } from 'antd';
-const confirm = Modal.confirm;
+import { Modal,} from 'antd';
 const weburl = 'http://localhost:3000';
 
 var ref = true;
@@ -40,7 +39,7 @@ export default {
             credentials: 'include',
             body:data
         }).then(function(res) {
-            if (res.status == 500) {
+            if (res.status === "500") {
                 if (ref) {
                     console.log('系统异常:', res);
                     ref = false;
@@ -56,7 +55,7 @@ export default {
                 return res.json();
             }
         }).catch(error => {
-            if (error == "TypeError: Failed to fetch") {
+            if (error === "TypeError: Failed to fetch") {
                 if (ref) {
                     console.log('网络异常:', error);
                     ref = false;

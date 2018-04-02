@@ -1,8 +1,4 @@
 import React from 'react';
-import {Card,Form,Input,Radio,Button} from 'antd';
-const FormItem=Form.Item;
-
-
 
 class CM0101_C extends React.Component {
     constructor(props) {

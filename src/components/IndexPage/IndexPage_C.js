@@ -5,7 +5,6 @@ import {Card, Form, Input, Radio, Button} from 'antd';
 
 const FormItem = Form.Item;
 
-
 class IndexPage extends React.Component {
     constructor(props) {
         super(props);
@@ -56,8 +55,7 @@ class IndexPage extends React.Component {
                             <FormItem className="FormItem">
                                 {getFieldDecorator('userNm', {
                                     rules: [{required: true, message: '请输入用户名',}],
-                                })
-                                (
+                                })(
                                     <Input size="large" placeholder="请输入用户名" className="input"/>
                                 )
                                 }
@@ -65,15 +63,13 @@ class IndexPage extends React.Component {
                             <FormItem className="FormItem">
                                 {getFieldDecorator('password', {
                                     rules: [{required: true, message: '请输入密码!',}],
-                                })
-                                (
+                                })(
                                     <Input size="large" placeholder="请输入密码" className="input"/>
                                 )
                                 }
                             </FormItem>
                             <FormItem>
-                                {getFieldDecorator('savePassword', {})
-                                (
+                                {getFieldDecorator('savePassword', {})(
                                     <Radio>记住密码</Radio>
                                 )
                                 }

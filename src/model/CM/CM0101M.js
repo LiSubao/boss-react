@@ -1,8 +1,7 @@
-
 export default {
-    namespace:"main",
+    namespace:"cm0101Info",
     state:{
-        modelName:"luyuting"
+
     },
     effects:{
 
