@@ -7,7 +7,6 @@ export default {
     effects:{
         *init({payload},{call}){
             var test=yield call(login,payload)
-            console.log(test);
         }
     },
     reducers:{

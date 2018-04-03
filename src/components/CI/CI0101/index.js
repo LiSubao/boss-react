@@ -1,6 +1,6 @@
 import React from 'react';
 
-class CM0101_C extends React.Component {
+class CI0101C extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,9 +9,9 @@ class CM0101_C extends React.Component {
     }
     render(){
         return(
-            <div>CM0101</div>
+            <div>CM0101{this.props.ci0101Info.name}</div>
         )
     }
 }
 
-export default CM0101_C;
+export default CI0101C;

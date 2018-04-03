@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'dva';
 import IndexPage from '../components/IndexPage/IndexPage_C';
 import {Form} from 'antd';

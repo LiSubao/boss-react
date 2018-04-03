@@ -1,0 +1,27 @@
+.mainContainer {
+  height:100%;
+  .headerContainer {
+    .header-left{
+      margin-left: 16px;
+      display: inline-block;
+      .logo {
+        text-align: left;
+      }
+    }
+
+    .header-right {
+      float:right;
+      vertical-align: center;
+      line-height: 40px;
+      span{
+        margin-right: 16px
+      }
+    }
+  }
+  .contentContainer{
+    height:100%;
+  }
+  .route-view{
+    padding: 32px 24px 24px 32px;
+  }
+}

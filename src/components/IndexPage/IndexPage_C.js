@@ -11,7 +11,7 @@ class IndexPage extends React.Component {
         this.state = {}
     }
 
-    componentDidMount() {
+    componentDidMount(){
         this.props.dispatch({
             type: "indexPage/init",
             payload: {
@@ -19,7 +19,6 @@ class IndexPage extends React.Component {
                 password: "root",
             }
         })
-        console.log(this.props);
     }
 
     handleSubmit = (e) => {

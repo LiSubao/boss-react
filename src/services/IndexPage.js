@@ -5,7 +5,6 @@ async function login(params) {
     for(let key in params){
         formData.append(key,params[key])
     }
-    console.log(formData);
     return $.formPost("/v1/login/",formData)
 }
 
